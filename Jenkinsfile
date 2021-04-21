@@ -17,7 +17,7 @@ pipeline {
                        
                        
                         
-                      sh 'az group delete --resource-group Myresourcegroup'
+                      sh 'az group delete --resource-group ${RG Name}'
                        
                     
                        
