@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    parameters {
+        string(name: 'RGName', description: 'Azure RG Name')
+    }
     
     environment {
        
@@ -17,7 +20,7 @@ pipeline {
                        
                        
                         
-                      sh 'az group list'
+                      sh 'az group delete --name $Env:RGName'
                        
                     
                        
