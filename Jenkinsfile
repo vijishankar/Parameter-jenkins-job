@@ -16,7 +16,7 @@ pipeline {
                        
                        
                        
-                       sh 'Remove-AzureRmResourceGroup -Name ${params.RG Name}'
+                       sh 'Remove-AzureRmResourceGroup -Name $ENV:RG Name'
                        
                     
                        
