@@ -1,9 +1,6 @@
 pipeline {
     agent any
-    parameters {
-        string(name: 'RGName', description: 'Azure RG Name')
-    }
-
+    
     environment {
        
        AZURE_SUBSCRIPTION_ID='4917809c-4753-4722-81bf-a1b4429fd9ca'
