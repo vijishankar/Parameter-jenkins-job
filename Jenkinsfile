@@ -16,7 +16,8 @@ pipeline {
                        
                        
                        
-                       sh 'Remove-AzureRmResourceGroup -Name $ENV:RG Name'
+                        
+                      sh 'az group delete --name $ENV:RG Name'
                        
                     
                        
