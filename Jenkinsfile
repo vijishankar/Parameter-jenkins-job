@@ -20,7 +20,7 @@ pipeline {
                        
                        
                         
-                      sh 'az group delete --name $Env:RGName  -Verbose -Force'
+                      sh 'Remove-AzureRmResourceGroup -Name $Env:RGName -Verbose -Force'
                        
                     
                        
