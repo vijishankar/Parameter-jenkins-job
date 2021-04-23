@@ -21,7 +21,7 @@ pipeline {
                        
                        pwsh ''' 
                         
-                       sh 'Remove-AzureRmResourceGroup -Name "$Env:RGName" -Verbose -Force'
+                        Remove-AzureRmResourceGroup -Name "$Env:RGName" -Verbose -Force
                        
                 '''
                        
