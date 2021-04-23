@@ -28,7 +28,7 @@ pipeline {
 	  
 	 
         stage ('Delete') {
-           if($Delete -eq $true)
+           if($Delete=='true')
         }
     }
     
