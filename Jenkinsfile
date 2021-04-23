@@ -18,12 +18,11 @@ pipeline {
                    withCredentials([usernamePassword(credentialsId: 'myAzureCredential', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
                             sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
                        
-                       
-                       pwsh ''' 
+                  
                         
-                        Remove-AzureRmResourceGroup -Name "$Env:RGName" -Verbose -Force
+                      sh 'az group delete --name "$Env:RGName" --yes'
                        
-                '''
+         
                        
                     
                        
