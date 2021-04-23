@@ -4,7 +4,7 @@ pipeline {
         
         choice(name: 'RGName', choices: ['Ingress', 'Transact'], description: 'RG')
         
-        booleanParam(name: 'Resource-Delete', defaultValue: 'false', description: '')
+        booleanParam(name: 'Delete', defaultValue: 'false', description: '')
     }
     
     environment {
@@ -30,7 +30,7 @@ pipeline {
         stage ('Delete') {
             when {
                 // Only say hello if a "greeting" is requested
-                expression {$Resource-Delete == 'true' }
+                expression {$Delete == 'true' }
             }
             steps {
                 sh 'az group delete $RGName --yes'   
