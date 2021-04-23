@@ -32,7 +32,7 @@ pipeline {
         script {
              def delete = '$Delete'
 	
-           If (delete.equals("true"))
+            if(delete.equals("true"))
 		{
 		sh 'az group delete $RGName --yes'	
 		}
