@@ -34,6 +34,7 @@ pipeline {
 	
             if('$Delete'.equals("true"))
 		{
+                Write-Output ('$Delete')
 		sh 'az group delete --name $RGName --yes'	
 		}
 		
