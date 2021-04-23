@@ -29,7 +29,7 @@ pipeline {
 	  stage('Delete'){
 	    steps {
 			     script {
-				 If ($Resource-Delete -eq 'true')
+				 If ($Resource-Delete)
 				 {
 				   sh 'az group delete $RGName --yes'
 				 }
