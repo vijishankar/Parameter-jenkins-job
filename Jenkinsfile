@@ -1,7 +1,8 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'RGName', description: 'Azure RG Name')
+        
+         string(name: 'RGName', defaultValue: '', description: 'Azure RG Name')
     }
     
     environment {
