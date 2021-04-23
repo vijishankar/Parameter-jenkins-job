@@ -26,7 +26,7 @@ pipeline {
             }
 	  }
 	  
-	 stages {
+	 
         stage ('Delete') {
             when {
                 // Only say hello if a "greeting" is requested
@@ -37,5 +37,5 @@ pipeline {
             }
         }
     }
-    }
+    
 }
