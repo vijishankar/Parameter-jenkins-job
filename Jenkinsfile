@@ -32,7 +32,7 @@ pipeline {
         script {
              //def delete = build.getEnvVars()["Delete"]
 	
-            if('$Delete')
+            if(Delete)
 		{
                 Write-Output (params.$Delete)
 		sh 'az group delete --name $RGName --yes'	
