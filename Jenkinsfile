@@ -21,16 +21,19 @@ pipeline {
                             sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $CLIENT_SECRET -t $AZURE_TENANT_ID'
                        
                        sh  'az group create --location westus --resource-group $RGName'
-                        
-                     
-                       
-         
-                       
-                    
-                       
                        
                         }
             }
-        }
+	  }
+	  
+	  stage('Delete'){
+	    steps {
+			     
+				 if($Resource-Delete -eq $true)
+				 {
+				   sh 'az group delete $RGName --yes'
+				 }
+		}	
+		}
     }
 }
