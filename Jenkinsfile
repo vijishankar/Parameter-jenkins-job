@@ -29,10 +29,14 @@ pipeline {
 	 
         stage ('Delete') {
          steps {
+        script {
            if($Delete=='true')
 		{
 		sh 'az group delete $RGName --yes'	
+		}else{
+			echo"Nothing to be deleted"
 		}
+	}
 	 }
         }
     }
