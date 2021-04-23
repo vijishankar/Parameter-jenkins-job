@@ -26,15 +26,16 @@ pipeline {
             }
 	  }
 	  
-	  stage('Delete'){
-	    steps {
-			     script {
-				 If ($Resource-Delete)
-				 {
-				   sh 'az group delete $RGName --yes'
-				 }
-			     }
-		}	
-		}
+	 stages {
+        stage ('Delete') {
+            when {
+                // Only say hello if a "greeting" is requested
+                expression {$Resource-Delete == 'true' }
+            }
+            steps {
+                sh 'az group delete $RGName --yes'
+            }
+        }
+    }
     }
 }
