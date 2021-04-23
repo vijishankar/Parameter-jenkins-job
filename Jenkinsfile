@@ -20,7 +20,7 @@ pipeline {
                        
                        
                         
-                      sh 'az group delete --name $Env:RGName'
+                      sh 'az group delete --name $Env:RGName --yes'
                        
                     
                        
