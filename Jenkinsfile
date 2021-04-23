@@ -30,7 +30,7 @@ pipeline {
         stage ('Delete') {
          steps {
         script {
-           If ( '$Delete' == "true")
+           If ( '$Delete' -eq "true")
 		{
 		sh 'az group delete $RGName --yes'	
 		}
