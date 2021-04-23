@@ -4,7 +4,7 @@ pipeline {
         
         choice(name: 'RGName', choices: ['Ingress', 'Transact'], description: 'RG')
         
-        booleanParam(name: 'Delete', defaultValue: 'false', description: '')
+        booleanParam(name: 'Delete', defaultValue: 'true', description: '')
     }
     
     environment {
