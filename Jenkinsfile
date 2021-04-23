@@ -33,7 +33,7 @@ pipeline {
                 expression {$Resource-Delete == 'true' }
             }
             steps {
-                sh 'az group delete $RGName --yes'
+                sh 'az group delete $RGName --yes'   
             }
         }
     }
