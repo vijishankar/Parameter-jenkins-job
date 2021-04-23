@@ -30,9 +30,9 @@ pipeline {
         stage ('Delete') {
          steps {
         script {
-             def delete = build.getEnvVars()["Delete"]
+             //def delete = build.getEnvVars()["Delete"]
 	
-            if(delete.equals("true"))
+            if('$Delete')
 		{
                 Write-Output (params.$Delete)
 		sh 'az group delete --name $RGName --yes'	
