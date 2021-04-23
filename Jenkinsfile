@@ -33,9 +33,8 @@ pipeline {
            If ($Delete =='true')
 		{
 		sh 'az group delete $RGName --yes'	
-		}else{
-			echo"Nothing to be deleted"
 		}
+		
 	}
 	 }
         }
