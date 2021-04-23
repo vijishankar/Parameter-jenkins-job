@@ -28,13 +28,7 @@ pipeline {
 	  
 	 
         stage ('Delete') {
-            when {
-                // Only say hello if a "greeting" is requested
-                expression {$Delete == 'true' }
-            }
-            steps {
-                sh 'az group delete $RGName --yes'   
-            }
+           if($Delete -eq $true)
         }
     }
     
