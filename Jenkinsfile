@@ -2,7 +2,9 @@ pipeline {
     agent any
     parameters {
         
-         string(name: 'RGName', defaultValue: '', description: 'Azure RG Name')
+        choice(name: 'RGName', choices: ['Ingress', 'Transact'], description: 'RG')
+        
+        booleanParam(name: 'Resource-Delete', defaultValue: 'false', description: '')
     }
     
     environment {
@@ -18,7 +20,7 @@ pipeline {
                    withCredentials([usernamePassword(credentialsId: 'myAzureCredential', passwordVariable: 'CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
                             sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $CLIENT_SECRET -t $AZURE_TENANT_ID'
                        
-                  
+                    
                         
                       sh 'az group delete --name $RGName --yes'
                        
